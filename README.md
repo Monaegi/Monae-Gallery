@@ -15,3 +15,14 @@
 - Framework: Vue.js(프론트엔드) + DRF(백엔드)
 - Language: Python 3.6.1
 - DataBase: SQLite3(로컬용) + PostgreSQL(배포용)
+
+## 설치
+
+project root 상위에서
+`npm install -g bower`
+
+projrct root에서
+`./manage.py bower install`
+`./manage.py collectstatic`
+
+
