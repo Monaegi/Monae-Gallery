@@ -222,3 +222,21 @@ venv.bak/
 
 .idea/
 *.swp
+
+# front project
+front_project/.DS_Store
+front_project/node_modules/
+front_project/dist/
+front_project/npm-debug.log*
+front_project/yarn-debug.log*
+front_project/yarn-error.log*
+
+# Editor directories and files
+front_project/.idea
+front_project/vscode
+front_project/*.suo
+front_project/*.ntvs*
+front_project/njsproj
+front_project/*.sln
+
+
