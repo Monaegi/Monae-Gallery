@@ -1,0 +1,133 @@
+
+#scheduler {
+  margin: 0 5%;
+
+  .desc {
+    width: 45%;
+    height: 398px;
+    background: #333;
+    color: #fafafa;
+    float: left;
+
+    .date {
+      text-align: center;
+
+      p {
+        margin: 20px 0 5px 0;
+        font-size: 56px;
+        font-weight: 900;
+      }
+
+      hr {
+        width: 35px;
+        margin-bottom: 25px;
+      }
+
+      span {
+        color: #6cc091;
+      }
+    }
+
+    .description {
+      padding: 15px;
+      margin-top: 40px;
+
+      .room {
+        border-radius: 0;
+        font-size: 14px;
+        color: #fafafa;
+        border-bottom: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .active {
+        background: rgba(225, 225, 225, 0.3);
+      }
+
+      .no-active {
+        background: transparent;
+
+        &:hover {
+          border-top: 1px solid #6cc091;
+          border-left: 1px solid #6cc091;
+          border-right: 1px solid #6cc091;
+          color: #6cc091;
+        }
+      }
+
+      ul {
+        border: 1px solid #f1f1f1;
+        margin: 0;
+
+        li {
+          line-height: 35px;
+
+          .time {
+            display: inline-block;
+            width: 115px;
+          }
+
+          .reserve {
+            background: transparent;
+            border: 1px solid #fafafa;
+            border-radius: 20px;
+            color: #fafafa;
+            padding: 5px 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .calendar {
+    width: 50%;
+    margin: 15px 2.5% 40px 2.5%;
+    text-align: center;
+    border-collapse: collapse;
+    font-weight: bold;
+    float: left;
+
+    .month {
+      font-size: 22px;
+
+      td {
+        padding: 25px;
+
+        .prev-next {
+          border: none;
+          color: #ddd;
+          width: 50px;
+        }
+      }
+    }
+
+    .summit {
+      color: #8d8d8d;
+
+      td {
+        height: 30px;
+        line-height: 30px;
+        padding-top: 5px;
+        margin-bottom: 5px;
+        border-top: 2px solid #f2f2f2;
+        border-bottom: 2px solid #f2f2f2;
+      }
+    }
+
+    .row {
+      color: pink;
+
+      td {
+        width: 14.2%;
+        height: 40px;
+        padding-top: 5px;
+
+        a {
+          text-decoration: none;
+          color: #5d5d5d;
+        }
+      }
+    }
+  }
+}
