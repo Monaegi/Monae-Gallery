@@ -12,3 +12,5 @@ class Schedules(models.Model):
     event_name = models.CharField(max_length=100)
     event_detail = models.TextField()
     room = models.CharField(max_length=50)
+
+    REQUIRED_FIELDS = ['user', 'event_name', 'scheduled_date_start']
