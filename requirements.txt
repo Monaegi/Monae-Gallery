@@ -2,5 +2,6 @@ django < 1.12
 django-scheduler < 0.8.7
 django-bower < 5.3
 flake8 < 3.6
-djangoframework < 3.8
+djangorestframework < 3.7
+djangorestframework-jwt < 1.12
 django-cors-headers < 2.2
