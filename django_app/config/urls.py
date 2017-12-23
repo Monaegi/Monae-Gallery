@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^rent/', include('rent.urls')),
+    url(r'^member/', include('member.urls')),
 ]
