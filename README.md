@@ -17,12 +17,9 @@
 - DataBase: SQLite3(로컬용) + PostgreSQL(배포용)
 
 ## 설치
-
 project root 상위에서
 `npm install -g bower`
 
 project root에서
 `./manage.py bower install`
 `./manage.py collectstatic`
-
-
