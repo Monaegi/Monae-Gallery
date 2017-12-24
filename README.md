@@ -21,7 +21,7 @@
 project root 상위에서
 `npm install -g bower`
 
-projrct root에서
+project root에서
 `./manage.py bower install`
 `./manage.py collectstatic`
 
