@@ -1,22 +1,20 @@
 <template>
   <section>
     <navigation/>
-    <scheduler/>
-    <!-- <rent/> -->
+    <rent/>
   </section>
 </template>
 
 <script>
 import navigation from './components/navigation'
-import scheduler from './components/scheduler'
-// import rent from './components/rent'
+import rent from './components/rent'
 
-//새로운 컴포넌트를 추가 할 때는 아래 components에 추가해 주세요. 
+//새로운 컴포넌트를 추가 할 때는 아래 components에 추가해 주세요.
 //ex) components: { scheduler, addComponent }
 export default {
   name: 'app',
   components: {
-    navigation, scheduler
+    navigation, rent
   }
 }
 </script>
