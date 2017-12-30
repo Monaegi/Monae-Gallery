@@ -19,6 +19,7 @@
 ## 설치
 project root 상위에서
 `npm install -g bower`
+`pip install -r requirements.txt`
 
 project root에서
 `./manage.py bower install`
