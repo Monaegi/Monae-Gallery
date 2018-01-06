@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import axios from 'axios'
 import app from './App'
-// import rent from './components/rent'
 
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
