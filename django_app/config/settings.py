@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'member',
     'rent',
     'auth_token'
+    'schedules',
 ]
 
 MIDDLEWARE = [
@@ -132,16 +133,16 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Django REST Framework 설정
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
-    ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-        'rest_framework.authentication.BasicAuthentication',
-        'auth_token.authentication.TokenAuthentication',
-    ),
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',
+#     ),
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.SessionAuthentication',
+#         'rest_framework.authentication.BasicAuthentication',
+#         'auth_token.authentication.TokenAuthentication',
+#     ),
+# }
 
 # CORS 설정
 CORS_ALLOW_CREDENTIALS = True

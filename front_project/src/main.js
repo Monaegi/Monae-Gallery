@@ -2,8 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import axios from 'axios'
-import scheduler from './components/scheduler'
-// import rent from './components/rent'
+import app from './App'
 
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
@@ -11,12 +10,6 @@ Vue.prototype.axios = axios
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
-  template: '<scheduler/>',
-  components: { scheduler }
-})
-
-new Vue({
-  el: '#app',
-  template: '<rent/>',
-  components: { rent }
-})
+  template: '<app/>',
+  components: { app }
+});
