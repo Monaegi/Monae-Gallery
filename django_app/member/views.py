@@ -51,4 +51,5 @@ class LoginView(APIView):
         if keep_login:  # 로그인 유지가 True인 경우
             token.expired = None
             token.save()
+        user.update_last_login()
         return Response(data={"token": token.key, "expired_date": token.expired}, status=status.HTTP_200_OK)
