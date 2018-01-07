@@ -42,3 +42,9 @@ class UserCreateSerializer(serializers.ModelSerializer):
         self.instance.set_password(self.validated_data['password'])
         self.instance.save()
         return self.instance
+
+
+class LoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField()
+    keep_login = serializers.BooleanField(required=False)

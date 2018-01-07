@@ -1,6 +1,9 @@
+from datetime import timedelta
+
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils import timezone
 
 
 class UserManager(BaseUserManager):
@@ -44,3 +47,7 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'phone_number']
     objects = UserManager()
+
+    def update_last_login(self):
+        self.last_login = timezone.now()
+        self.save()

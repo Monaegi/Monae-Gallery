@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Django-App
     'member',
     'rent',
+    'auth_token'
 ]
 
 MIDDLEWARE = [
@@ -138,6 +139,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.BasicAuthentication',
+        'auth_token.authentication.TokenAuthentication',
     ),
 }
 
