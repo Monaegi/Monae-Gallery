@@ -19,7 +19,6 @@ export default {
   background-repeat: no-repeat;
   width: 100%;
   height: 60vh;
-  padding: 20px;
 }
 #banner::after{
   content: '';
@@ -30,12 +29,15 @@ export default {
   position: absolute;
   background-color: black;
   opacity: 0.6;
-  z-index: -1;
+  z-index: 1;
 }
 .event_info{
+  position: absolute;
+  z-index: 1000;
   color: white;
-  float: right;
   font-size: 2rem;
+  right: 60px;
+  top: 40px;
 }
 .event_info h2{
   display: inline;

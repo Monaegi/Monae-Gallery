@@ -6,7 +6,7 @@
       </div>
       <ul class="sign-nav">
         <li class="sign-list" title="알람"><a href="#" class="link"><i class="fa fa-bell-o" aria-hidden="true"></i></a></li>
-        <li class="sign-list" title="로그인"><a href="#" class="link"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
+        <li class="sign-list" title="로그인"><a href="#" class="link"><i class="fa fa-user-circle" aria-hidden="true"></i></a></li>
         <li class="sign-list" title="회원가입"><a href="#" class="link"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
       </ul>
     </aside>
