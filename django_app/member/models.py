@@ -1,6 +1,9 @@
+from datetime import timedelta
+
 from django.contrib.auth.base_user import BaseUserManager
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.utils import timezone
 
 
 class UserManager(BaseUserManager):
@@ -31,8 +34,8 @@ class UserManager(BaseUserManager):
             raise ValueError('Superuser must have is_staff=True.')
         if extra_fields.get('is_superuser') is not True:
             raise ValueError('Superuser must have is_superuser=True.')
-        if extra_fields.get('is_activate') is not True:
-            raise ValueError('Superuser must have is_activate=True.')
+        if extra_fields.get('is_active') is not True:
+            raise ValueError('Superuser must have is_active=True.')
         return self._create_user(email, password, **extra_fields)
 
 
@@ -44,3 +47,7 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'phone_number']
     objects = UserManager()
+
+    def update_last_login(self):
+        self.last_login = timezone.now()
+        self.save()
