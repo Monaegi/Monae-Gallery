@@ -61,7 +61,7 @@ export default {
       this.getData();
     },
     checkToday: function() {
-      this.year == date.getFullYear() && this.month == (date.getMonth() + 1) ? this.today = date.getDate() : this.today = 1;
+      this.year == date.getFullYear() && this.month == (date.getMonth() + 1) ? this.today = date.getDate() : this.today = '';
     },
     getData: function() {
       this.axios.get('http://localhost:8000/rent/scheduler/' + this.year + "/" + this.month + "/")
