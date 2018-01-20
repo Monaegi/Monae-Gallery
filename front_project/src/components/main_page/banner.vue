@@ -14,7 +14,7 @@ export default {
 #banner{
   z-index: -2;
   position: relative;
-  background-image: url(./../assets/banner.jpg);
+  background-image: url(./../../assets/banner.jpg);
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
