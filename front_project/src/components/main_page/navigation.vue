@@ -30,6 +30,7 @@ export default {
     overflow: hidden;
   }
   .sign-wrap{
+    z-index: 10000;
     height: 6vh;
     position: fixed;
     width: 100%;

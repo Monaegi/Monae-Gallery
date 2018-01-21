@@ -1,16 +1,15 @@
 <template>
-  <section id="banner">
-    <ul class="event_wrapper effect" :style="{'margin-left': carusel_control + 'vw'}">
+  <section id="banner" @mouseenter="carusel_control.mouse_check = true" @mouseleave="carusel_control.mouse_check = false">
+    <ul class="event_wrapper effect" :style="{'margin-left': carusel_control.position + 'vw'}">
       <li class="event_list" v-for="(list, index) in banner_list" :style="list.style" :key="index">
         <div class="event_info">
           <h2>{{list.title}}</h2>
           <p>{{list.content}}</p>
         </div>
       </li>
-    <button class="prev_button move_button" @click="prevBanner"><i class="fa fa-angle-left effect" aria-hidden="true"></i></button>
-    <button class="next_button move_button" @click="nextBanner"><i class="fa fa-angle-right effect" aria-hidden="true"></i></button>
     </ul>
-    
+    <button class="prev_button move_button"><i class="fa fa-angle-left effect" @click="prevBanner" aria-hidden="true"></i></button>
+    <button class="next_button move_button"><i class="fa fa-angle-right effect"  @click="nextBanner" aria-hidden="true"></i></button>
   </section>
 </template>
 <script>
@@ -20,7 +19,10 @@ import banner2 from './../../assets/banner/banner2.jpg'
 export default {
   data() {
     return {
-      carusel_control: 0,
+      carusel_control: {
+        mouse_check: false,
+        position: 0
+      },
       banner_list: [
         {
           style: {'background-image': 'url('+ banner1 +')'},
@@ -28,29 +30,34 @@ export default {
           content: '2018.01.20 ~ 2018.02.01'
         },{
           style: {'background-image': 'url('+ banner2 +')'},
-          title: 'Concert, Event',
-          content: '2018.01.20 ~ 2018.02.01'
+          title: 'Korean War Exhibition',
+          content: '2018.01.30 ~ 2018.02.20'
         }
       ],
     }
   },
   methods: {
     prevBanner: function() {
-      if(this.carusel_control != 0 && this.carusel_control != (-100 * (this.banner_list.length-1))) {
-        this.carusel_control = this.carusel_control - 100;
-      } else if(this.carusel_control == (-100 * (this.banner_list.length-1))) {
-        this.carusel_control = 0;
+      let position = this.carusel_control.position;
+      if(position != 0 && position != (-100 * (this.banner_list.length-1))) {
+        this.carusel_control.position = position - 100;
+      } else if(position == (-100 * (this.banner_list.length-1))) {
+        this.carusel_control.position = 0;
       } else {
-        this.carusel_control = -100 * (this.banner_list.length-1);
+        this.carusel_control.position = -100 * (this.banner_list.length-1);
       };
     },
     nextBanner: function() {
-      if(this.carusel_control == (-100 * (this.banner_list.length-1))) {
-        this.carusel_control = 0;
+      let position = this.carusel_control.position;
+      if(position == (-100 * (this.banner_list.length-1))) {
+        this.carusel_control.position = 0;
       } else {
-        this.carusel_control = -100 * (this.banner_list.length-1)
+        this.carusel_control.position = -100 * (this.banner_list.length-1)
       }
     }
+  },
+  mounted () {
+    setInterval(() => {this.carusel_control.mouse_check ? '' : this.nextBanner()}, 3000);
   }
 }
 </script>
