@@ -1,9 +1,16 @@
 <template>
   <section id="gallery_service">
     <ul class="gallery_service_wrapper">
-      <li class="gallery_service_list">service 1</li>
-      <li class="gallery_service_list">service 2</li>
-      <li class="gallery_service_list">service 3</li>
+      <li class="gallery_service_list">
+        <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+        service 1
+      </li>
+      <li class="gallery_service_list">
+        service 2
+      </li>
+      <li class="gallery_service_list">
+        service 3
+      </li>
     </ul>
   </section>
 </template>

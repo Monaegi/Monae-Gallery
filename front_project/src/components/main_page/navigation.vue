@@ -2,12 +2,12 @@
   <nav id="navigation">
     <aside class="sign-wrap">
       <div class="logo">
-        <a href="#" title="Monae Gallery 홈으로 바로가기" class="link"><img src="../assets/logo/logo.png" width="80%" alt="logo"></a>
+        <a href="#" title="Monae Gallery 홈으로 바로가기" class="link"><img src="../../assets/logo/logo.png" width="80%" alt="logo"></a>
       </div>
       <ul class="sign-nav">
-        <li class="sign-list" title="알람"><a href="#" class="link"><i class="fa fa-bell-o" aria-hidden="true"></i></a></li>
-        <li class="sign-list" title="로그인"><a href="#" class="link"><i class="fa fa-sign-in" aria-hidden="true"></i></a></li>
-        <li class="sign-list" title="회원가입"><a href="#" class="link"><i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+        <li class="sign-list" title="알람"><button><i class="fa fa-bell-o effect" aria-hidden="true"></i></button></li>
+        <li class="sign-list" title="로그인"><button><i class="fa fa-user-circle effect" aria-hidden="true"></i></button></li>
+        <li class="sign-list" title="회원가입"><button><i class="fa fa-user-plus effect" aria-hidden="true"></i></button></li>
       </ul>
     </aside>
     <ul class="menu">
@@ -26,6 +26,7 @@ export default {
 </script>
 <style>
   #navigation{
+    position: relative;
     overflow: hidden;
   }
   .sign-wrap{
@@ -42,16 +43,27 @@ export default {
     clear:both;
   }
   .sign-nav{
+    height: 6vh;
     float: right;
+  }
+  .sign-nav i{
+    line-height: 6vh;
+    padding: 0 15px;
+    height: 6vh;
+    color: #fff;
+  }
+  .sign-nav i:hover{
+    color: #a58a78;
   }
   .logo{
     float: left;
   }
   .logo .link{
-    padding-top: 2px;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
   }
   .sign-list{
-    line-height: 45px;
     float: left;
   }
   .link{
