@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     # Django-App
     'member',
     'rent',
+    'auth_token'
     'schedules',
 ]
 
@@ -62,10 +63,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'corsheaders.middleware.CorsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-]
-
-MIDDLEWARE_CLASSES = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
@@ -141,9 +138,9 @@ STATIC_URL = '/static/'
 #         'rest_framework.permissions.IsAuthenticated',
 #     ),
 #     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
 #         'rest_framework.authentication.SessionAuthentication',
 #         'rest_framework.authentication.BasicAuthentication',
+#         'auth_token.authentication.TokenAuthentication',
 #     ),
 # }
 
