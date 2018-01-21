@@ -3,22 +3,22 @@
     <navigation/>
     <banner/>
     <galleryService/>
-    <rent/>
+    <mainCalendar/>
   </section>
 </template>
 
 <script>
-import navigation from './components/navigation'
-import banner from './components/banner'
-import galleryService from './components/gallery_service'
-import rent from './components/rent'
+import navigation from './components/main_page/navigation'
+import banner from './components/main_page/banner'
+import galleryService from './components/main_page/gallery_service'
+import mainCalendar from './components/main_page/main_calendar'
 
 //새로운 컴포넌트를 추가 할 때는 아래 components에 추가해 주세요.
 //ex) components: { scheduler, addComponent }
 export default {
   name: 'app',
   components: {
-    navigation, banner, galleryService, rent
+    navigation, banner, galleryService, mainCalendar
   }
 }
 </script>
@@ -44,6 +44,7 @@ export default {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
   }
   h1, h2, h3, h4, h5{
     margin: 0;
@@ -61,5 +62,14 @@ export default {
   }
   i.fa{
     font-size: 1.7rem;
+  }
+  button{
+    outline: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .effect{
+    transition: 0.5s all;
   }
 </style>
