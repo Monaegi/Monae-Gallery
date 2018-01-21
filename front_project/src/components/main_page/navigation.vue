@@ -12,10 +12,10 @@
     </aside>
     <ul class="menu">
       <li class="menu-list"><h2>Monae Gallery</h2></li>
-      <li class="menu-list"><a href="#" class="link">Visit</a></li>
-      <li class="menu-list"><a href="#" class="link">Exhibition</a></li>
-      <li class="menu-list"><a href="#" class="link">Program</a></li>
-      <li class="menu-list"><a href="#" class="link">News</a></li>
+      <li class="menu-list"><a href="#" class="link effect">Visit</a></li>
+      <li class="menu-list"><a href="#" class="link effect">Exhibition</a></li>
+      <li class="menu-list"><a href="#" class="link effect">Program</a></li>
+      <li class="menu-list"><a href="#" class="link effect">News</a></li>
     </ul>
   </nav>  
 </template>
@@ -48,12 +48,13 @@ export default {
   }
   .sign-nav i{
     line-height: 6vh;
-    padding: 0 15px;
+    padding: 0 17px;
     height: 6vh;
     color: #fff;
   }
   .sign-nav i:hover{
     color: #a58a78;
+    font-size: 3rem;
   }
   .logo{
     float: left;
@@ -65,6 +66,9 @@ export default {
   }
   .sign-list{
     float: left;
+  }
+  .sign-list button{
+    padding: 0;
   }
   .link{
     padding: 0 17px;
@@ -86,5 +90,8 @@ export default {
     padding-left: 17px;
     float: left;
     font-size: 2rem;
+  }
+  .menu-list .link:hover{
+    transform: rotate(20deg);
   }
 </style>

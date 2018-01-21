@@ -127,6 +127,7 @@ export default {
   padding: 0 5px;
 }
 .move_button i:hover{
+  transform: scale(1.5);
   opacity: 1;
   color: #222;
 }
