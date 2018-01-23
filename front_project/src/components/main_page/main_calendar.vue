@@ -13,8 +13,8 @@
         </ul>
       </li>
     </ul>
-    <button class="prev_button move_button" @click="prevMonth"><i class="fa fa-angle-left effect" aria-hidden="true"></i></button>
-    <button class="next_button move_button" @click="nextMonth"><i class="fa fa-angle-right effect" aria-hidden="true"></i></button>
+    <button class="prev_button move_button"><i class="fa fa-angle-left effect" @click="prevMonth" aria-hidden="true"></i></button>
+    <button class="next_button move_button"><i class="fa fa-angle-right effect" @click="nextMonth" aria-hidden="true"></i></button>
   </aside>
 </template>
 
@@ -127,6 +127,7 @@ export default {
   padding: 0 5px;
 }
 .move_button i:hover{
+  transform: scale(1.5);
   opacity: 1;
   color: #222;
 }
