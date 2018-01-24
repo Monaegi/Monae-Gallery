@@ -1,15 +1,20 @@
 <template>
   <section id="banner" @mouseenter="carusel_control.mouse_check = true" @mouseleave="carusel_control.mouse_check = false">
-    <ul class="event_wrapper effect" :style="{'margin-left': carusel_control.position + 'vw'}">
-      <li class="event_list" v-for="(list, index) in banner_list" :style="list.style" :key="index">
-        <div class="event_info">
+    <ul class="event-wrapper effect" :style="{'margin-left': carusel_control.position + 'vw'}">
+      <li class="event-list" v-for="(list, index) in banner_list" :style="list.style" :key="index">
+        <div class="event-info">
           <h2>{{list.title}}</h2>
           <p>{{list.content}}</p>
         </div>
       </li>
     </ul>
-    <button class="prev_button move_button"><i class="fa fa-angle-left effect" @click="prevBanner" aria-hidden="true"></i></button>
-    <button class="next_button move_button"><i class="fa fa-angle-right effect"  @click="nextBanner" aria-hidden="true"></i></button>
+    <ul class="banner-nav-list">
+      <li class="banner-nav" v-for="index in banner_list.length" :key="index">
+        <button @click="setBanner(index)"><i class="fa fa-circle effect" :class="(index * (-100) +100) == carusel_control.position ? 'current-nav' : ''" aria-hidden="true"></i></button>
+      </li>
+    </ul>
+    <button class="prev-button move-button"><i class="fa fa-angle-left effect" @click="prevBanner" aria-hidden="true"></i></button>
+    <button class="next-button move-button"><i class="fa fa-angle-right effect"  @click="nextBanner" aria-hidden="true"></i></button>
   </section>
 </template>
 <script>
@@ -21,7 +26,8 @@ export default {
     return {
       carusel_control: {
         mouse_check: false,
-        position: 0
+        position: 0,
+        color: '#fff'
       },
       banner_list: [
         {
@@ -54,6 +60,9 @@ export default {
       } else {
         this.carusel_control.position = -100 * (this.banner_list.length-1)
       }
+    },
+    setBanner: function(index) {
+      this.carusel_control.position = index * (-100) + 100;
     }
   },
   mounted () {
@@ -65,11 +74,11 @@ export default {
 #banner{
   position: relative;
 }
-.event_wrapper{
+.event-wrapper{
   display: flex;
   width: 200vw;
 }
-.event_list{
+.event-list{
   position: relative;
   z-index: -2;
   background-position: center;
@@ -77,7 +86,7 @@ export default {
   width: 100%;
   height: 60vh;
 }
-.event_list::after{
+.event-list::after{
   content: '';
   top: 0;
   bottom: 0;
@@ -88,7 +97,7 @@ export default {
   opacity: 0.6;
   z-index: 1;
 }
-.event_info{
+.event-info{
   position: absolute;
   z-index: 1000;
   color: white;
@@ -96,31 +105,52 @@ export default {
   right: 60px;
   top: 40px;
 }
-.event_info h2{
+.event-info h2{
   display: inline;
   font-size: 6rem;
 }
+.banner-nav-list{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.banner-nav{
+  float: left;
+}
+.banner-nav i{
+  padding: 30px 7px;
+  color: #999;
+}
+.banner-nav .current-nav{
+  transform: scale(1.2);
+  color: white;
+}
+.banner-nav i:hover{
+  transform: scale(1.2);
+  color: white;
+}
 
-.move_button{
+.move-button{
   height: 10vh;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-.move_button i{
+.move-button i{
   color: #444;
   font-size: 10rem;
   padding: 0 5px;
 }
-.move_button i:hover{
+.move-button i:hover{
   transform: scale(1.5);
   opacity: 1;
   color: #a58a78;
 }
-.prev_button{
+.prev-button{
   left: 0;
 }
-.next_button{
+.next-button{
   right: 0;
 }
 </style>
