@@ -12,13 +12,16 @@ import navigation from './components/main_page/navigation'
 import banner from './components/main_page/banner'
 import galleryService from './components/main_page/gallery_service'
 import mainCalendar from './components/main_page/main_calendar'
+import scheduler from './components/scheduler'
+
 
 //새로운 컴포넌트를 추가 할 때는 아래 components에 추가해 주세요.
 //ex) components: { scheduler, addComponent }
 export default {
   name: 'app',
   components: {
-    navigation, banner, galleryService, mainCalendar
+    navigation, banner, galleryService, mainCalendar,
+    scheduler
   }
 }
 </script>

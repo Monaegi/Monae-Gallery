@@ -81,8 +81,7 @@ INSTALLED_APPS = [
     # Django-App
     'member',
     'rent',
-    'auth_token'
-    'schedules',
+    'auth_token',
 ]
 
 MIDDLEWARE = [
