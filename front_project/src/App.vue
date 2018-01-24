@@ -4,6 +4,7 @@
     <banner/>
     <galleryService/>
     <mainCalendar/>
+    <mainFooter/>
   </section>
 </template>
 
@@ -12,13 +13,14 @@ import navigation from './components/main_page/navigation'
 import banner from './components/main_page/banner'
 import galleryService from './components/main_page/gallery_service'
 import mainCalendar from './components/main_page/main_calendar'
+import mainFooter from "./components/main_page/main_footer";
 
 //새로운 컴포넌트를 추가 할 때는 아래 components에 추가해 주세요.
 //ex) components: { scheduler, addComponent }
 export default {
   name: 'app',
   components: {
-    navigation, banner, galleryService, mainCalendar
+    navigation, banner, galleryService, mainCalendar, mainFooter
   }
 }
 </script>
@@ -68,6 +70,10 @@ export default {
     cursor: pointer;
     background: none;
     border: none;
+  }
+  p{
+    padding: 0;
+    margin: 0;
   }
   .effect{
     transition: 0.5s all;
