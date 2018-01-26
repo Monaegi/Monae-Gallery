@@ -21,13 +21,6 @@
           <p class="team-info link"><a href="#"><i class="fa fa-github effect " aria-hidden="true"></i></a></p>
       </li>
       <li class="web-info-list">
-          <b class="title">Back-End : 조동희</b><br>
-          <p class="team-info"><a href="#" class="effect">Email. @gmail.com</a></p>
-          <p class="team-info">Tel. 010.0000.0000</p>
-          <p class="team-info link"><a href="#"><i class="fa fa-address-book effect" aria-hidden="true"></i></a></p>
-          <p class="team-info link"><a href="#"><i class="fa fa-github effect " aria-hidden="true"></i></a></p>
-      </li>
-      <li class="web-info-list">
           <b class="title">Front-End : 이범두</b><br>
           <p class="team-info"><a href="#" class="effect">Email. a01055255417@gmail.com</a></p>
           <p class="team-info">Tel. 010.5525.5417</p>

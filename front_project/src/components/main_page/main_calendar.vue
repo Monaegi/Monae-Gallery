@@ -1,6 +1,6 @@
 <template>
   <aside id="main_calendar">
-    <ul class="calendar_warpper wrapper">
+    <ul class="calendar_warpper">
       <li class="month_wrapper wrapper">
         <span class="month">{{month}}</span>
         <span class="year">{{year}} {{english_month[month - 1]}}</span>
@@ -78,13 +78,13 @@ export default {
 <style scoped>
 #main_calendar{
   position: relative;
-  height: 10vh;
+  height: 12vh;
 }
 .calendar_warpper{
   position: absolute;
   left: 0;
   right: 0;
-  padding: 0 40px;
+  padding: 10px 40px;
 }
 .wrapper{
   line-height: 5vh;

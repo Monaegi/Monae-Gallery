@@ -9,12 +9,10 @@
       </li>
     </ul>
     <ul class="banner-nav-list">
-      <li class="banner-nav" v-for="index in banner_list.length" :key="index">
-        <button @click="setBanner(index)"><i class="fa fa-circle effect" :class="(index * (-100) +100) == carusel_control.position ? 'current-nav' : ''" aria-hidden="true"></i></button>
+      <li class="banner-nav effect" v-for="(list, index) in banner_list" :key="index" :style="list.style">
+        <button :class="(index * (-100)+100) == carusel_control.position ? 'current-nav' : ''" @click="setBanner(index)"></button>
       </li>
     </ul>
-    <button class="prev-button move-button"><i class="fa fa-angle-left effect" @click="prevBanner" aria-hidden="true"></i></button>
-    <button class="next-button move-button"><i class="fa fa-angle-right effect"  @click="nextBanner" aria-hidden="true"></i></button>
   </section>
 </template>
 <script>
@@ -26,8 +24,7 @@ export default {
     return {
       carusel_control: {
         mouse_check: false,
-        position: 0,
-        color: '#fff'
+        position: 0
       },
       banner_list: [
         {
@@ -43,16 +40,6 @@ export default {
     }
   },
   methods: {
-    prevBanner: function() {
-      let position = this.carusel_control.position;
-      if(position != 0 && position != (-100 * (this.banner_list.length-1))) {
-        this.carusel_control.position = position - 100;
-      } else if(position == (-100 * (this.banner_list.length-1))) {
-        this.carusel_control.position = 0;
-      } else {
-        this.carusel_control.position = -100 * (this.banner_list.length-1);
-      };
-    },
     nextBanner: function() {
       let position = this.carusel_control.position;
       if(position == (-100 * (this.banner_list.length-1))) {
@@ -62,11 +49,11 @@ export default {
       }
     },
     setBanner: function(index) {
-      this.carusel_control.position = index * (-100) + 100;
+      this.carusel_control.position = ++index * (-100) + 100;
     }
   },
   mounted () {
-    setInterval(() => {this.carusel_control.mouse_check ? '' : this.nextBanner()}, 3000);
+    setInterval(() => {this.carusel_control.mouse_check ? '' : this.nextBanner()}, 4000);
   }
 }
 </script>
@@ -111,46 +98,27 @@ export default {
 }
 .banner-nav-list{
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 10px;
+  right: 0;
 }
 .banner-nav{
+  /* box-shadow: 1px 1px 2px 2px #a58a78, -1px -1px 2px 2px #a58a78; */
+  opacity: 0.5;
+  border-radius: 5px;
   float: left;
+  margin-right: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-.banner-nav i{
-  padding: 30px 7px;
-  color: #999;
-}
-.banner-nav .current-nav{
-  transform: scale(1.2);
-  color: white;
-}
-.banner-nav i:hover{
-  transform: scale(1.2);
-  color: white;
-}
-
-.move-button{
-  height: 10vh;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.move-button i{
-  color: #444;
-  font-size: 10rem;
-  padding: 0 5px;
-}
-.move-button i:hover{
-  transform: scale(1.5);
+.banner-nav:hover{
   opacity: 1;
-  color: #a58a78;
+  box-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff;
+  transform: scale(1.2);
 }
-.prev-button{
-  left: 0;
+.banner-nav button{
+  padding: 40px 80px;
 }
-.next-button{
-  right: 0;
+.current-nav{
+  transform: scale(1.2);
 }
 </style>
