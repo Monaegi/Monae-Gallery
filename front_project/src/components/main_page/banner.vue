@@ -9,8 +9,8 @@
       </li>
     </ul>
     <ul class="banner-nav-list">
-      <li class="banner-nav effect" v-for="(list, index) in banner_list" :key="index" :style="list.style">
-        <button :class="(index * (-100)+100) == carusel_control.position ? 'current-nav' : ''" @click="setBanner(index)"></button>
+      <li class="banner-nav effect" :class="(index * (-100)) == carusel_control.position ? 'current-nav' : ''" v-for="(list, index) in banner_list" :key="index" :style="list.style">
+        <button @click="setBanner(index)"></button>
       </li>
     </ul>
   </section>
@@ -106,11 +106,12 @@ export default {
   opacity: 0.5;
   border-radius: 5px;
   float: left;
-  margin-right: 20px;
+  margin-right: 30px;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-.banner-nav:hover{
+.banner-nav:hover, .current-nav{
   opacity: 1;
   box-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff;
   transform: scale(1.2);
