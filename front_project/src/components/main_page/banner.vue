@@ -1,6 +1,6 @@
 <template>
   <section id="banner" @mouseenter="carusel_control.mouse_check = true" @mouseleave="carusel_control.mouse_check = false">
-    <ul class="event-wrapper effect" :style="{'margin-left': carusel_control.position + 'vw'}">
+    <ul class="event-wrapper effect" :style="{'margin-left': carusel_control.position + 'vw', 'width': banner_list.length * 100 + 'vw'}">
       <li class="event-list" v-for="(list, index) in banner_list" :style="list.style" :key="index">
         <div class="event-info">
           <h2>{{list.title}}</h2>
@@ -63,7 +63,6 @@ export default {
 }
 .event-wrapper{
   display: flex;
-  width: 200vw;
 }
 .event-list{
   position: relative;
@@ -71,7 +70,7 @@ export default {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 60vh;
+  height: 65vh;
 }
 .event-list::after{
   content: '';
@@ -98,7 +97,7 @@ export default {
 }
 .banner-nav-list{
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   right: 0;
 }
 .banner-nav{
@@ -106,7 +105,7 @@ export default {
   opacity: 0.5;
   border-radius: 5px;
   float: left;
-  margin-right: 30px;
+  margin-right: 50px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -117,7 +116,7 @@ export default {
   transform: scale(1.2);
 }
 .banner-nav button{
-  padding: 40px 80px;
+  padding: 6vh 6vw;
 }
 .current-nav{
   transform: scale(1.2);
