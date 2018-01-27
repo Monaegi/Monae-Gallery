@@ -4,6 +4,7 @@
     <banner/>
     <galleryService/>
     <mainCalendar/>
+    <router-view></router-view>
   </section>
 </template>
 
