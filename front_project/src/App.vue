@@ -22,8 +22,7 @@ import mainFooter from "./components/main_page/main_footer";
 export default {
   name: 'app',
   components: {
-    navigation, banner, galleryService, mainCalendar, mainFooter,
-    scheduler
+    navigation, banner, galleryService, mainCalendar, mainFooter, scheduler
   }
 }
 </script>
