@@ -24,7 +24,7 @@ export default {
   
 }
 </script>
-<style>
+<style scoped>
   #navigation{
     position: relative;
     overflow: hidden;
