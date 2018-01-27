@@ -221,6 +221,7 @@ venv.bak/
 
 .idea/
 *.swp
+.log/
 
 # front project
 front_project/.DS_Store

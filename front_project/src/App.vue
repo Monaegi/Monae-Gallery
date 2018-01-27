@@ -4,6 +4,7 @@
     <banner/>
     <galleryService/>
     <mainCalendar/>
+    <router-view></router-view>
     <mainFooter/>
   </section>
 </template>
@@ -13,6 +14,7 @@ import navigation from './components/main_page/navigation'
 import banner from './components/main_page/banner'
 import galleryService from './components/main_page/gallery_service'
 import mainCalendar from './components/main_page/main_calendar'
+import scheduler from './components/scheduler'
 import mainFooter from "./components/main_page/main_footer";
 
 //새로운 컴포넌트를 추가 할 때는 아래 components에 추가해 주세요.
@@ -20,7 +22,7 @@ import mainFooter from "./components/main_page/main_footer";
 export default {
   name: 'app',
   components: {
-    navigation, banner, galleryService, mainCalendar, mainFooter
+    navigation, banner, galleryService, mainCalendar, mainFooter, scheduler
   }
 }
 </script>

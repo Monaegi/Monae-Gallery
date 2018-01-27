@@ -11,9 +11,17 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+# logging
+import logging
+logger = logging.getLogger(__name__) # 모듈의 이름을 해당 logger가 사용
+# logger 어떤 메세지를 전달해주기 위한 통로이기 때문에 자체로는 로깅 관련 기능이 없다.
+# 메세지를 전달받았을 때 어떤 역할을 할 것인지에 대한 처리는 Handler로 설정한다
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+ROOT_DIR = os.path.dirname(BASE_DIR)
 
 AUTH_USER_MODEL = 'member.User'
 
@@ -26,7 +34,31 @@ SECRET_KEY = 'g2@f=%6xk=!g_=x2229ig-s!#10d3k&*19*#yos0%1n&@z5^vz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', ]
+
+LOGGING = {
+    'version': 1, # 로그 설정에 대한 버전
+    'handlers': { # 어떤 로그에 대해서 어떻게 처리할 지에 대한 핸들러 그 개수는 'console' 1개
+        'console': {
+            'class': 'logging.StreamHandler' # 파이썬 내장 모듈로, 콘솔창에 내용을 표시해줌
+        },
+        # 'file': {
+        #     'level': "DEBUG",
+        #     'class': 'logging.FileHandler',
+        #     'filename': os.path.join(ROOT_DIR, '.log', 'django.log')
+        # }
+    },
+    'loggers': {
+        'django': { # 로거 모듈 이름이 장고로 시작할 경우
+            'handlers': [
+                'console',
+                # 'file',
+            ],
+            'level': 'DEBUG',
+            'propagate': True # 에러를 잡을 수 있는 다른 핸들러가 있다면 계속해서 아래로 에러 내용을 전달
+        }
+    }
+}
 
 # Application definition
 
@@ -49,8 +81,7 @@ INSTALLED_APPS = [
     # Django-App
     'member',
     'rent',
-    'auth_token'
-    'schedules',
+    'auth_token',
 ]
 
 MIDDLEWARE = [

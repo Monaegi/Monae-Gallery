@@ -70,15 +70,18 @@
   </div>
 </template>
 
-<script type="text/javascript">
-  var today = new Date();
-  var year = today.getFullYear();
-  var month = today.getMonth() + 1;
-  var day = today.getDate();
-  var weekIdx = today.getDay();
-  var week = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
+<script>
+  const today = new Date();
+  let year = today.getFullYear();
+  let month = today.getMonth() + 1;
+  let day = today.getDate();
+  let weekIdx = today.getDay();
+  const week = ["SUNDAY", "MONDAY", "TUESDAY", "WEDNESDAY", "THURSDAY", "FRIDAY", "SATURDAY"]
   export default {
-    name: 'scheduler',
+    name: 'rent',
+    // props: [
+    //     'year'
+    // ],
     data: function(){
       return {
         result: [],
@@ -102,11 +105,8 @@
     },
     methods: {
       dayTarget: function(day, index) {
-        var check = /^test$/g;
-        var test = document.getElementsByClassName("test");
-        console.log(test);
         // test.className = test.className.replace(check, " ").trim();
-        event.target.className += " test";
+        // event.target.className += " test";
         this.target = day;
         this.week = week[index];
 
